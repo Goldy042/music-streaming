@@ -50,7 +50,7 @@ export function AudioPlayer() {
   };
   if (!currentTrack) return null;
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full w-full">
       <div
         ref={progressRef}
         className="h-1 bg-[#2A2A2A] cursor-pointer group"
@@ -63,13 +63,13 @@ export function AudioPlayer() {
           }}
         />
       </div>
-      <div className="flex items-center justify-between px-4 flex-1">
+      <div className="flex items-center justify-betweenpx-4 flex-1 w-full">
         <audio
           ref={audioRef}
           src={currentTrack.url}
           onEnded={() => setIsPlaying(false)}
         />
-        <div className="flex items-center gap-4">
+        <div className="flex items-center pl-8 gap-4 w-full">
           <img
             src={currentTrack.image}
             alt={currentTrack.title}
@@ -80,7 +80,7 @@ export function AudioPlayer() {
             <div className="text-sm text-gray-400">{currentTrack.artist}</div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 w-full">
           <div className="flex items-center gap-4">
             <button className="text-gray-400 hover:text-white transition-colors">
               <SkipBack size={24} />
@@ -105,7 +105,7 @@ export function AudioPlayer() {
             <span>{formatTime(duration)}</span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full items-center justify-center">
           <Volume2 size={20} className="text-gray-400" />
           <input
             type="range"
